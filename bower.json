@@ -1,0 +1,24 @@
+{
+  "name": "pettracker",
+  "version": "0.0.0",
+  "authors": [
+    "Sakto <daniel@danwebs.dk>"
+  ],
+  "description": "track yo pets",
+  "license": "MIT",
+  "homepage": "pettracker.dev",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.1",
+    "ember": "~1.9.1",
+    "ember-data": "~0.0.14",
+    "handlebars": "~2.0.0"
+  }
+}
