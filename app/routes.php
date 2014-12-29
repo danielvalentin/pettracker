@@ -11,9 +11,32 @@
 |
 */
 
-Route::get('/', 'PageController@index');
-Route::get('/about', 'PageController@about');
+// Pages
+Route::get('/', array(
+	'as' => 'frontpage',
+	'uses' => 'PageController@index'
+));
+Route::get('/about', array(
+	'as' => 'about',
+	'uses' => 'PageController@about'
+));
 
-Route::any('user/login', 'UserController@login');
-Route::any('user/signup', 'UserController@signup');
-Route::any('user/logout', 'UserController@logout');
+// Users
+Route::any('user/login', array(
+	'as' => 'userlogin',
+	'uses' => 'UserController@login'
+));
+Route::any('user/signup', array(
+	'as' => 'usersignup',
+	'uses' => 'UserController@signup'
+));
+Route::any('user/logout', array(
+	'as' => 'userlogout',
+	'uses' => 'UserController@logout'
+));
+
+// App
+Route::get('/overview', array(
+	'as' => 'overview',
+	'uses' => 'OverviewController@index'
+));

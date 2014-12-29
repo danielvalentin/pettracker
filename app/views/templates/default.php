@@ -4,6 +4,7 @@
 	<title>Pettracker</title>
 	
 	<?php echo HTML::style('bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>
+	<?php echo HTML::style('bower_components/fontawesome/css/font-awesome.min.css'); ?>
 	<?php echo HTML::style('media/css/style.css'); ?>
 
 </head>
@@ -40,13 +41,20 @@
 	<div class="row">
 		<div class="col-xs-10">
 			
-			<div id="content">
-				<?php echo $view; ?>
-			</div>
+			<?php echo $view; ?>
+			
 		</div>
 		<div class="col-xs-2">
 			<?php if(Auth::check()): ?>
-				Logged in as <?php echo Auth::user()->username; ?> - <a href="/user/logout" title="Log out">Log out</a>
+				<p>
+					Logged in as <?php echo Auth::user()->username; ?> - <a href="/user/logout" title="Log out">Log out</a>
+				</p>
+				<p>
+					<a href="/overview" class="btn btn-default">
+						<span class="fa fa-paw"></span>
+						Overview
+					</a>
+				</p>
 			<?php else: ?>
 				<form role="form" action="/user/login" method="post">
 					<div class="form-group">
@@ -81,11 +89,13 @@
 
 <?php echo HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'); ?>
 <?php echo HTML::script('bower_components/jgrowl/jquery.jgrowl.min.js'); ?>
-<?php //echo HTML::script('bower_components/handlebars/handlebars.min.js'); ?>
-<?php //echo HTML::script('bower_components/ember/ember.min.js'); ?>
-<?php //echo HTML::script('bower_components/ember-data/ember-data.min.js'); ?>
 <?php echo HTML::script('media/js/global.js'); ?>
-<?php //echo HTML::script('media/js/app.js'); ?>
+<?php if(Route::currentRouteName() == 'overview'): ?>
+	<?php echo HTML::script('bower_components/handlebars/handlebars.min.js'); ?>
+	<?php echo HTML::script('bower_components/ember/ember.min.js'); ?>
+	<?php echo HTML::script('bower_components/ember-data/ember-data.min.js'); ?>
+	<?php echo HTML::script('media/js/app.js'); ?>
+<?php endif; ?>
 
 </body>
 </html>
