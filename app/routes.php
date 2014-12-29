@@ -11,4 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@showWelcome');
+Route::get('/', 'PageController@index');
+Route::get('/about', 'PageController@about');
+
+Route::any('user/login', 'UserController@login');
+Route::any('user/signup', 'UserController@signup');
+Route::any('user/logout', 'UserController@logout');

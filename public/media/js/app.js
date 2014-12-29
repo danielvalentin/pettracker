@@ -1,5 +1,6 @@
 var App = Ember.Application.create({
-	LOG_TRANSITIONS:true
+	LOG_TRANSITIONS:true,
+	rootElement:'#content'
 });
 
 App.ApplicationAdapter = DS.RESTAdapter.extend({
