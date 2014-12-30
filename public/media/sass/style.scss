@@ -1,1 +1,8 @@
+@import 'mixins/mixins';
 @import 'elements/elements';
+@import 'base/base';
+
+.navbar
+{
+	@include drop-shadow(0);
+}

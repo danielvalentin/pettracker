@@ -10,6 +10,16 @@
 </head>
 <body>
 
+<?php
+
+$routes = Route::getRoutes();
+foreach($routes as $route)
+{
+	echo $route->getPath().'<br />';
+}
+
+?>
+
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		
