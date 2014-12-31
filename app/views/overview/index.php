@@ -8,4 +8,7 @@
 
 <script type="text/x-handlebars" data-template-name="index">
 	Handlebars template index output
+	{{#each households}}
+		{{name}}
+	{{/each}}
 </script>
