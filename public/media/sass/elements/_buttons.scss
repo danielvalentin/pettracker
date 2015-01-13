@@ -1,8 +1,15 @@
 .btn
 {
 	border-radius:0;
+	@include rectangle-out();
 	&:hover
 	{
 		@include drop-shadow(2);
+		border:0;
+	}
+	&.btn-default
+	{
+		background-color:#fff;
 	}
 }
+

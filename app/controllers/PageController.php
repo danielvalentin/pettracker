@@ -1,7 +1,7 @@
 <?php
 
 class PageController extends BaseController {
-
+	
 	public function index()
 	{
 		
@@ -11,5 +11,5 @@ class PageController extends BaseController {
 	{
 		
 	}
-
+	
 }

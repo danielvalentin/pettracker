@@ -40,3 +40,42 @@ Route::get('/overview', array(
 	'as' => 'overview',
 	'uses' => 'OverviewController@index'
 ));
+
+/*
+ * API
+ */
+
+// Households
+Route::get('/api/households', array(
+	'as' => 'getAllHouseholds',
+	'uses' => 'HouseholdsController@getAll'
+));
+Route::get('/api/households/{id}', array(
+	'as' => 'getHousehold',
+	'uses' => 'HouseholdsController@get'
+))->where('id','[0-9]+');
+Route::post('/api/households', array(
+	'as' => 'createHousehold',
+	'uses' => 'HouseholdsController@create'
+));
+
+// Pets
+Route::get('/api/pets/{id}', array(
+	'as' => 'getPet',
+	'uses' => 'PetsController@get'
+));
+Route::post('/api/pets', array(
+	'as' => 'createPet',
+	'uses' => 'PetsController@create'
+));
+
+// Petevents
+Route::get('/api/petevents/{id}', array(
+	'as' => 'getEvent',
+	'uses' => 'PeteventsController@get'
+));
+Route::post('/api/petevents', array(
+	'as' => 'createPetevent',
+	'uses' => 'PeteventsController@create'
+));
+

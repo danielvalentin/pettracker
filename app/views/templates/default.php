@@ -91,9 +91,9 @@
 <?php echo HTML::script('bower_components/jgrowl/jquery.jgrowl.min.js'); ?>
 <?php echo HTML::script('media/js/global.js'); ?>
 <?php if(Route::currentRouteName() == 'overview'): ?>
-	<?php echo HTML::script('bower_components/handlebars/handlebars.min.js'); ?>
-	<?php echo HTML::script('bower_components/ember/ember.min.js'); ?>
-	<?php echo HTML::script('bower_components/ember-data/ember-data.min.js'); ?>
+	<?php echo HTML::script('bower_components/handlebars/handlebars.js'); ?>
+	<?php echo HTML::script('bower_components/ember/ember.js'); ?>
+	<?php echo HTML::script('bower_components/ember-data/ember-data.js'); ?>
 	<?php echo HTML::script('media/js/app.js'); ?>
 <?php endif; ?>
 
